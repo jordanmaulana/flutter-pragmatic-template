@@ -21,7 +21,7 @@ jobs:
 
       - name: Check for outdated Flutter packages
         env:
-          PROJECT_NAME: Flutter Usecase Template
+          PROJECT_NAME: Flutter Pragmatic Template
         run: |
           output=$(flutter pub outdated)
           echo "$output"
