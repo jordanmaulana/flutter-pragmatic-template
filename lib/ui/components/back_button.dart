@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-import '../configs/colors.dart';
+import '../../configs/colors.dart';
 
 class VBackButton extends StatelessWidget {
   const VBackButton({super.key});

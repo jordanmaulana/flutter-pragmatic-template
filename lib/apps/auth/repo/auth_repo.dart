@@ -16,7 +16,7 @@ class AuthRepo {
         },
       );
 
-      return response.data['api_token'].toResourceSuccess();
+      return "${response.data['token']}".toResourceSuccess();
     } on DioException catch (e) {
       return e.errorMessage.toResourceFailure();
     }
@@ -29,7 +29,7 @@ class AuthRepo {
         data: data,
       );
 
-      return response.data['api_token'].toResourceSuccess();
+      return '${response.data['token']}'.toResourceSuccess();
     } on DioException catch (e) {
       return e.errorMessage.toResourceFailure();
     }

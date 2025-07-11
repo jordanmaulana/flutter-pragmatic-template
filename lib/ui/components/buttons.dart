@@ -1,4 +1,4 @@
-import '../base/export_view.dart';
+import '../../base/export_view.dart';
 
 /// Usually an app design has 2 main buttons.
 

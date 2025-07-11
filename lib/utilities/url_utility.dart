@@ -1,6 +1,6 @@
 import 'package:url_launcher/url_launcher.dart';
 
-import '../components/popup.dart';
+import '../ui/components/popup.dart';
 
 class UrlUtility {
   static String? getYoutubeThumbnail(String videoUrl) {

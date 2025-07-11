@@ -7,8 +7,24 @@ extension ResponseExtension on DioException {
     if (response != null) {
       String? error;
       try {
-        /// TODO: Modify the error parser according to your own standard backend response.
-        error = response!.data['message'];
+        if (response!.data is Map<String, dynamic>) {
+          final data = response!.data as Map<String, dynamic>;
+          if (data.containsKey('error')) {
+            error = data['error'] as String?;
+          } else {
+            for (var entry in data.entries) {
+              if (entry.value is String) {
+                error = entry.value as String?;
+              } else if (entry.value is List) {
+                // If the value is a list, we can join them into a single string
+
+                error = '${entry.key}, ${(entry.value as List).join(', ')}';
+              }
+            }
+          }
+        }
+
+        Get.log('${response?.data}');
       } catch (e) {
         Get.log('Error $e');
       }

@@ -5,10 +5,10 @@ A flutter template to quickstart your flutter projects. Use this if you like pra
 
 ## Flutter Version
 
-Flutter 3.27.4 • channel stable • https://github.com/flutter/flutter.git
-Framework • revision d8a9f9a52e (3 weeks ago) • 2025-01-31 16:07:18 -0500
-Engine • revision 82bd5b7209
-Tools • Dart 3.6.2 • DevTools 2.40.3
+Flutter 3.32.6 • channel stable • https://github.com/flutter/flutter.git
+Framework • revision 077b4a4ce1 (2 days ago) • 2025-07-08 13:31:08 -0700
+Engine • revision 72f2b18bb0 (2 days ago) • 2025-07-08 10:33:53 -0700
+Tools • Dart 3.8.1 • DevTools 2.45.1
 
 ## Getting started
 

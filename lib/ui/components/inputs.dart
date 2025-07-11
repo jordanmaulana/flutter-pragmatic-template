@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-import '../configs/colors.dart';
+import '../../configs/colors.dart';
 import 'texts.dart';
 
 /// Used for custom textformfield.

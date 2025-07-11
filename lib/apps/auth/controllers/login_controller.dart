@@ -1,6 +1,6 @@
 import 'package:get/get.dart';
 
-import '../../../components/popup.dart';
+import '../../../ui/components/popup.dart';
 import '../../../configs/route_name.dart';
 import '../../profile/controllers/profile_controller.dart';
 import '../usecases/login_usecase.dart';

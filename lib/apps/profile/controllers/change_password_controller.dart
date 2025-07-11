@@ -1,5 +1,5 @@
 import 'package:flutter_usecase_template/apps/profile/repo/profile_repo.dart';
-import 'package:flutter_usecase_template/components/toast.dart';
+import 'package:flutter_usecase_template/ui/components/toast.dart';
 import 'package:get/get.dart';
 
 class ChangePasswordController {

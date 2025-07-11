@@ -49,6 +49,8 @@ dependencies:
   flutter_launcher_icons: ^0.14.3 # dart run flutter_launcher_icons
   flutter_native_splash: ^2.4.4 # dart run flutter_native_splash:create
 
+  # flutter build apk --split-per-abi -t lib/main_staging.dart
+
 dev_dependencies:
   flutter_test:
     sdk: flutter

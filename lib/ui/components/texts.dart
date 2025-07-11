@@ -1,6 +1,6 @@
 import 'package:google_fonts/google_fonts.dart';
-import '../base/export_view.dart';
-export '../extensions/my_string_extension.dart';
+import '../../base/export_view.dart';
+export '../../extensions/my_string_extension.dart';
 
 /// Standardize text style.
 /// Also handles null string & number / money format.
