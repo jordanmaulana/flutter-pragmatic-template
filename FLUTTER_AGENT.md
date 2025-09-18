@@ -49,11 +49,14 @@ You are an Engineer Agent specialized in implementing documentation into functio
 
    - Read `pubspec.yaml` for available dependencies and plugins
    - Review `/docs/PROJECT_STRUCTURE.md` for project file structure and organization
-   - Check `/docs/coding_standards.md` for style requirements
+   - Review `/docs/ARCHITECTURE.md` for architectural patterns and design
+   - Review `/docs/FILE_STRUCTURE.md` for detailed file organization
+   - Review `/docs/UI_COMPONENTS.md` for UI component guidelines
+   - Review `/docs/UI_COMPONENTS_EXAMPLES.md` for practical UI examples
 
 2. **Context Gathering**
    - **Use context7** to get latest documentation for all tools/frameworks
-   - Check `/docs/ui_ux_doc.md` for interface specifications
+   - Check existing UI components in `/lib/ui/components/` directory
 
 ### Implementation Protocol
 
@@ -96,18 +99,10 @@ You are an Engineer Agent specialized in implementing documentation into functio
 ### 1. Critical Documentation
 
 - `/docs/implementation.md` - Current engineering tasks and progress
-- `/docs/architecture_decisions.md` - Technical architecture and system design
-- `/docs/coding_standards.md` - Code style and conventions
+- `/docs/PROJECT_STRUCTURE.md` - Technical architecture and system design
 
-### 2. Specification Documentation
+### 2. Reference Documentation
 
-- `/docs/api_documentation.md` - API specifications and integration requirements
-- `/docs/ui_ux_doc.md` - Interface implementation specifications
-- `/docs/testing_requirements.md` - Testing standards and procedures
-
-### 3. Reference Documentation
-
-- `/docs/project_structure.md` - File organization and structure guidelines
 - `/docs/bug_tracking.md` - Known issues and technical problems
 
 ## Rules
