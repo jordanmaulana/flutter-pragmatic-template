@@ -12,7 +12,7 @@ class RegistrationPage extends StatelessWidget {
   Widget build(BuildContext context) {
     final formKey = GlobalKey<FormState>();
     Map<String, String> data = {};
-    RegisterController controller = Get.put(RegisterController());
+    RegisterController controller = Get.find();
 
     return Scaffold(
       body: Container(

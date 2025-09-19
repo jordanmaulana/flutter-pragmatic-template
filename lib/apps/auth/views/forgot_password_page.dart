@@ -7,7 +7,7 @@ class ForgotPasswordPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    ForgotPasswordController controller = Get.put(ForgotPasswordController());
+    ForgotPasswordController controller = Get.find();
     final formKey = GlobalKey<FormState>();
     Map<String, dynamic> data = {};
 

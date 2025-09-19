@@ -9,7 +9,7 @@ class ChangePasswordPage extends StatelessWidget {
     final formKey = GlobalKey<FormState>();
     Map<String, dynamic> data = {};
 
-    ChangePasswordController controller = Get.put(ChangePasswordController());
+    ChangePasswordController controller = Get.find();
     return Scaffold(
       appBar: AppBar(
         title: const Text('Change Password'),
