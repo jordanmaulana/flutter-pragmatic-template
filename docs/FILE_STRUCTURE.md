@@ -53,7 +53,8 @@ feature_name/
 └── views/                # UI components
     ├── list/             # List-related screens
     ├── detail/           # Detail screens
-    └── add/              # Creation screens
+    ├── add/              # Creation screens
+    └── change_password/  # Password management screens
 ```
 
 #### Repository Pattern

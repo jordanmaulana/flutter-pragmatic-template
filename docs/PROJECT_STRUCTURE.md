@@ -63,6 +63,7 @@ feature_name/
    - Locate the feature directory under `lib/apps/`
    - Make changes following the established patterns
    - Update tests if necessary
+   - For example, the profile feature includes a ChangePasswordPage for password management
 
 3. **Adding shared functionality**:
    - For UI components: Add to `lib/ui/components/`

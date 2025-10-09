@@ -645,19 +645,161 @@ class StylesExample extends StatelessWidget {
                     'Accent',
                     color: Colors.white,
                   ),
-                ),
-                Container(
-                  width: 100,
-                  height: 100,
-                  decoration: VStyle.corner(
-                    radius: 16.0,
-                    color: VColor.tertiary,
-                  ),
-                  alignment: Alignment.center,
-                  child: const VText(
-                    'Tertiary',
-                    color: VColor.primary,
-                  ),
+## Password Management Examples
+
+### Change Password Form
+
+```dart
+import 'package:flutter/material.dart';
+import 'package:flutter_usecase_template/apps/profile/controllers/change_password_controller.dart';
+import 'package:flutter_usecase_template/base/export_view.dart';
+
+class ChangePasswordExample extends StatelessWidget {
+  const ChangePasswordExample({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    final formKey = GlobalKey<FormState>();
+    Map<String, dynamic> data = {};
+
+    ChangePasswordController controller = Get.find();
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('Change Password'),
+      ),
+      body: Padding(
+        padding: EdgeInsets.all(16.0),
+        child: Form(
+          key: formKey,
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              VText('Create a strong password to help protect your account.'),
+              SizedBox(height: 24.0),
+              
+              // Current Password Field
+              VText(
+                'Current Password',
+                fontWeight: FontWeight.w500,
+              ),
+              SizedBox(height: 4.0),
+              Obx(() => VFormInput(
+                    prefixIcon: HugeIcon(
+                      icon: HugeIcons.strokeRoundedSquareLock02,
+                      color: VColor.primary,
+                    ),
+                    obscure: controller.obscurePassword.value,
+                    keyboardType: TextInputType.visiblePassword,
+                    hint: 'Enter current password',
+                    validator: (value) {
+                      if (value!.isEmpty) {
+                        return 'Password must not be empty';
+                      }
+                      return null;
+                    },
+                    onSaved: (String? value) {
+                      data["current_password"] = value!;
+                    },
+                    suffixIcon: IconButton(
+                      onPressed: controller.toggleObscurePassword,
+                      icon: HugeIcon(
+                        icon: controller.obscurePassword.isTrue
+                            ? HugeIcons.strokeRoundedView
+                            : HugeIcons.strokeRoundedViewOff,
+                        color: VColor.primary,
+                      ),
+                    ),
+                  )),
+              SizedBox(height: 16.0),
+              
+              // New Password Field
+              VText(
+                'New Password',
+                fontWeight: FontWeight.w500,
+              ),
+              SizedBox(height: 4.0),
+              Obx(() => VFormInput(
+                    prefixIcon: HugeIcon(
+                      icon: HugeIcons.strokeRoundedSquareLock02,
+                      color: VColor.primary,
+                    ),
+                    obscure: controller.obscureNewPassword.value,
+                    keyboardType: TextInputType.visiblePassword,
+                    hint: 'Enter new password',
+                    validator: (value) {
+                      if (value!.isEmpty) {
+                        return 'Password must not be empty';
+                      }
+                      return null;
+                    },
+                    onSaved: (String? value) {
+                      data["new_password"] = value!;
+                    },
+                    suffixIcon: IconButton(
+                      onPressed: controller.toggleObscureNewPassword,
+                      icon: HugeIcon(
+                        icon: controller.obscureNewPassword.isTrue
+                            ? HugeIcons.strokeRoundedView
+                            : HugeIcons.strokeRoundedViewOff,
+                        color: VColor.primary,
+                      ),
+                    ),
+                  )),
+              SizedBox(height: 16.0),
+              
+              // Confirm New Password Field
+              VText(
+                'Confirm New Password',
+                fontWeight: FontWeight.w500,
+              ),
+              SizedBox(height: 4.0),
+              Obx(() => VFormInput(
+                    prefixIcon: HugeIcon(
+                      icon: HugeIcons.strokeRoundedSquareLock02,
+                      color: VColor.primary,
+                    ),
+                    obscure: controller.obscureNewPasswordConfirmation.value,
+                    keyboardType: TextInputType.visiblePassword,
+                    hint: 'Confirm new password',
+                    validator: (value) {
+                      if (value!.isEmpty) {
+                        return 'Password must not be empty';
+                      }
+                      return null;
+                    },
+                    onSaved: (String? value) {
+                      data["new_password_confirmation"] = value!;
+                    },
+                    suffixIcon: IconButton(
+                      onPressed: controller.toggleObscurePasswordConfirmation,
+                      icon: HugeIcon(
+                        icon: controller.obscureNewPasswordConfirmation.isTrue
+                            ? HugeIcons.strokeRoundedView
+                            : HugeIcons.strokeRoundedViewOff,
+                        color: VColor.primary,
+                      ),
+                    ),
+                  )),
+              SizedBox(height: 24.0),
+              
+              // Update Password Button
+              PrimaryButton(
+                'Update Password',
+                onTap: () {
+                  if (formKey.currentState!.validate()) {
+                    formKey.currentState!.save();
+                    controller.submit(data);
+                  }
+                },
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+}
+```
                 ),
               ],
             ),

@@ -279,6 +279,16 @@ GetMaterialApp(
       },
     ),
     GetPage(
+      name: RouteName.changePassword,
+      page: () => const ChangePasswordPage(),
+      binding: BindingsBuilder(() {
+        Get.put(ChangePasswordController());
+      }),
+    ),
+    // More routes...
+  ],
+),
+    GetPage(
       name: RouteName.login,
       page: () => const LoginPage(),
     ),
