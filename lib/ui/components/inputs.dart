@@ -77,7 +77,7 @@ class VFormInput extends StatelessWidget {
       onFieldSubmitted: onSubmit,
       initialValue: initialValue,
       decoration: InputDecoration(
-        floatingLabelBehavior: FloatingLabelBehavior.always,
+        floatingLabelBehavior: .always,
         label: VText(label),
         isDense: dense,
         prefixIcon: prefixIcon,
@@ -87,8 +87,10 @@ class VFormInput extends StatelessWidget {
         filled: fillColor != null,
         hintStyle: GoogleFonts.interTight(),
         focusedBorder: _border(color: VColor.primary, radius: radius),
-        enabledBorder:
-            _border(color: borderColor ?? VColor.border, radius: radius),
+        enabledBorder: _border(
+          color: borderColor ?? VColor.border,
+          radius: radius,
+        ),
         errorBorder: _border(color: Colors.red, radius: radius),
         disabledBorder: _border(color: VColor.border, radius: radius),
         focusedErrorBorder: _border(color: VColor.primary, radius: radius),
@@ -103,7 +105,7 @@ class VFormInput extends StatelessWidget {
   OutlineInputBorder _border({required Color color, required double radius}) {
     return OutlineInputBorder(
       borderSide: BorderSide(color: color),
-      borderRadius: BorderRadius.all(Radius.circular(radius)),
+      borderRadius: .all(.circular(radius)),
     );
   }
 }

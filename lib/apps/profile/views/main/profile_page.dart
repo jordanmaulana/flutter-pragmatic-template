@@ -18,57 +18,44 @@ class ProfilePage extends StatelessWidget {
           children: [
             Column(
               children: [
-                Container(
-                  height: 120.0,
-                  color: VColor.primary,
-                ),
-                Expanded(
-                  child: Container(
-                    color: VColor.white,
-                  ),
-                ),
+                Container(height: 120.0, color: VColor.primary),
+                Expanded(child: Container(color: VColor.white)),
               ],
             ),
             Padding(
-              padding: EdgeInsets.all(context.lgPadding),
+              padding: .all(context.lgPadding),
               child: Column(
                 spacing: context.lgPadding,
-                crossAxisAlignment: CrossAxisAlignment.start,
+                crossAxisAlignment: .start,
                 children: [
                   VText(
                     "My Profile",
                     fontSize: 24,
                     color: VColor.white,
-                    fontWeight: FontWeight.bold,
+                    fontWeight: .bold,
                   ),
                   Container(
-                    width: double.infinity,
+                    width: .infinity,
                     decoration: VStyle.boxShadow(),
-                    padding: EdgeInsets.all(context.mdPadding),
+                    padding: .all(context.mdPadding),
                     child: Column(
                       spacing: context.mdPadding,
-                      crossAxisAlignment: CrossAxisAlignment.start,
+                      crossAxisAlignment: .start,
                       children: [
-                        VText(
-                          "John Doe",
-                          fontWeight: FontWeight.bold,
-                          fontSize: 16.0,
-                        ),
+                        VText("John Doe", fontWeight: .bold, fontSize: 16.0),
                         Row(
                           spacing: context.smPadding,
                           children: [
                             EmailIcon(),
                             Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
+                              crossAxisAlignment: .start,
                               children: [
                                 VText(
                                   "Email",
                                   fontSize: 12.0,
                                   color: VColor.greyText,
                                 ),
-                                VText(
-                                  "johndoe@gmail.com",
-                                ),
+                                VText("johndoe@gmail.com"),
                               ],
                             ),
                           ],
@@ -77,8 +64,8 @@ class ProfilePage extends StatelessWidget {
                         InkWell(
                           onTap: () => Get.toNamed(RouteName.changePassword),
                           child: Container(
-                            width: double.infinity,
-                            padding: EdgeInsets.symmetric(
+                            width: .infinity,
+                            padding: .symmetric(
                               horizontal: context.mdPadding,
                               vertical: context.smPadding,
                             ),
@@ -97,9 +84,8 @@ class ProfilePage extends StatelessWidget {
                             Get.dialog(
                               Dialog(
                                 shape: RoundedRectangleBorder(
-                                    borderRadius: BorderRadius.circular(
-                                  16.0,
-                                )),
+                                  borderRadius: .circular(16.0),
+                                ),
                                 child: Stack(
                                   children: [
                                     DeleteAccountPage(),
@@ -108,18 +94,20 @@ class ProfilePage extends StatelessWidget {
                                       right: 0.0,
                                       child: IconButton(
                                         onPressed: () => Get.back(),
-                                        icon: const Icon(Icons.close,
-                                            color: VColor.primary),
+                                        icon: const Icon(
+                                          Icons.close,
+                                          color: VColor.primary,
+                                        ),
                                       ),
-                                    )
+                                    ),
                                   ],
                                 ),
                               ),
                             );
                           },
                           child: Container(
-                            width: double.infinity,
-                            padding: EdgeInsets.symmetric(
+                            width: .infinity,
+                            padding: .symmetric(
                               horizontal: context.mdPadding,
                               vertical: context.smPadding,
                             ),
@@ -127,10 +115,7 @@ class ProfilePage extends StatelessWidget {
                               color: VColor.errorAccent,
                               radius: 8.0,
                             ),
-                            child: VText(
-                              "Delete Account",
-                              color: VColor.error,
-                            ),
+                            child: VText("Delete Account", color: VColor.error),
                           ),
                         ),
                         Divider(),
@@ -138,7 +123,7 @@ class ProfilePage extends StatelessWidget {
                           onTap: () => controller.logout(),
                           child: Row(
                             spacing: context.smPadding,
-                            mainAxisAlignment: MainAxisAlignment.end,
+                            mainAxisAlignment: .end,
                             children: [
                               HugeIcon(
                                 icon: HugeIcons.strokeRoundedLogout01,

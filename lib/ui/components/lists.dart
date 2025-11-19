@@ -118,7 +118,7 @@ class VPaginatedList extends StatelessWidget {
     if (length == 0) {
       return Center(
         child: Padding(
-          padding: const EdgeInsets.all(32.0),
+          padding: const .all(32.0),
           child: emptyPlaceHolder ?? const NoData(),
         ),
       );
@@ -135,14 +135,10 @@ class VPaginatedList extends StatelessWidget {
               physics: physics,
               controller: scrollController,
               scrollDirection: scrollDirection,
-              padding: padding ?? const EdgeInsets.all(16.0),
+              padding: padding ?? const .all(16.0),
               itemCount: length,
               separatorBuilder: (c, i) =>
-                  separator ??
-                  Divider(
-                    height: height,
-                    color: dividerColor,
-                  ),
+                  separator ?? Divider(height: height, color: dividerColor),
               itemBuilder: itemBuilder,
             ),
           ),

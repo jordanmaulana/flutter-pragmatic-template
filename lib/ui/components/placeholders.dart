@@ -12,8 +12,8 @@ class VError extends StatelessWidget {
   Widget build(BuildContext context) {
     return Center(
       child: Padding(
-        padding: const EdgeInsets.all(16.0),
-        child: VText(errorMsg, align: TextAlign.center),
+        padding: const .all(16.0),
+        child: VText(errorMsg, align: .center),
       ),
     );
   }
@@ -27,9 +27,6 @@ class NoData extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return VText(
-      text ?? 'Tidak ada data',
-      align: TextAlign.center,
-    );
+    return VText(text ?? 'Tidak ada data', align: .center);
   }
 }

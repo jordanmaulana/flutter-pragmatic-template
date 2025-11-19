@@ -25,10 +25,7 @@ class VersionTextState extends State<VersionText> {
   @override
   Widget build(BuildContext context) {
     String version = 'Version ${info?.version ?? ''}';
-    return VText(
-      version,
-      align: TextAlign.center,
-    );
+    return VText(version, align: .center);
   }
 
   Future<void> getInfo() async {

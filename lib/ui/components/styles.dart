@@ -10,7 +10,7 @@ abstract class VStyle {
   }) {
     return BoxDecoration(
       color: color,
-      borderRadius: BorderRadius.circular(radius),
+      borderRadius: .circular(radius),
       boxShadow: shadow(),
     );
   }
@@ -23,8 +23,8 @@ abstract class VStyle {
   }) {
     return BoxDecoration(
       color: color,
-      borderRadius: BorderRadius.circular(radius),
-      border: Border.all(color: borderColor),
+      borderRadius: .circular(radius),
+      border: .all(color: borderColor),
       boxShadow: shadow(),
     );
   }
@@ -35,11 +35,7 @@ abstract class VStyle {
   }
 
   /// Rounded corner
-  static BoxDecoration corner({
-    double radius = 12.0,
-    Color? color,
-  }) {
-    return BoxDecoration(
-        borderRadius: BorderRadius.circular(radius), color: color);
+  static BoxDecoration corner({double radius = 12.0, Color? color}) {
+    return BoxDecoration(borderRadius: .circular(radius), color: color);
   }
 }

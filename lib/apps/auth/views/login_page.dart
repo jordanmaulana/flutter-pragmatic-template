@@ -23,78 +23,76 @@ class _LoginPage extends State<LoginPage> {
       body: Container(
         decoration: BoxDecoration(
           gradient: LinearGradient(
-            begin: Alignment.topRight,
-            end: Alignment.bottomLeft,
+            begin: .topRight,
+            end: .bottomLeft,
             colors: [VColor.primary, VColor.accent],
           ),
         ),
         child: SafeArea(
-          child: LayoutBuilder(builder: (context, constraints) {
-            return SingleChildScrollView(
-              child: ConstrainedBox(
-                constraints: BoxConstraints(
-                  minHeight: constraints.maxHeight,
-                ),
-                child: Center(
-                  child: Form(
-                    key: _formKey,
-                    child: Container(
-                      margin: EdgeInsets.all(context.lgPadding),
-                      padding: EdgeInsets.symmetric(
-                        horizontal: context.lgPadding,
-                        vertical: context.xlPadding,
-                      ),
-                      decoration: BoxDecoration(
-                        color: VColor.white,
-                        borderRadius: BorderRadius.circular(16.0),
-                        boxShadow: VStyle.shadow(),
-                      ),
-                      child: Column(
-                        mainAxisSize: MainAxisSize.min,
-                        spacing: context.mdPadding,
-                        children: [
-                          FlutterLogo(
-                            size: 64.0,
-                          ),
-                          Column(
-                            spacing: context.smPadding,
-                            children: [
-                              VText(
-                                'Welcome to AppName',
-                                color: VColor.primary,
-                                fontSize: 24.0,
-                                fontWeight: FontWeight.bold,
-                              ),
-                              VText(
-                                'Sign in to continue',
-                                color: VColor.greyText,
-                              ),
-                            ],
-                          ),
-                          VFormInput(
-                            prefixIcon: HugeIcon(
-                              icon: HugeIcons.strokeRoundedMail01,
-                              color: VColor.primary,
+          child: LayoutBuilder(
+            builder: (context, constraints) {
+              return SingleChildScrollView(
+                child: ConstrainedBox(
+                  constraints: BoxConstraints(minHeight: constraints.maxHeight),
+                  child: Center(
+                    child: Form(
+                      key: _formKey,
+                      child: Container(
+                        margin: .all(context.lgPadding),
+                        padding: .symmetric(
+                          horizontal: context.lgPadding,
+                          vertical: context.xlPadding,
+                        ),
+                        decoration: BoxDecoration(
+                          color: VColor.white,
+                          borderRadius: .circular(16.0),
+                          boxShadow: VStyle.shadow(),
+                        ),
+                        child: Column(
+                          mainAxisSize: .min,
+                          spacing: context.mdPadding,
+                          children: [
+                            FlutterLogo(size: 64.0),
+                            Column(
+                              spacing: context.smPadding,
+                              children: [
+                                VText(
+                                  'Welcome to AppName',
+                                  color: VColor.primary,
+                                  fontSize: 24.0,
+                                  fontWeight: .bold,
+                                ),
+                                VText(
+                                  'Sign in to continue',
+                                  color: VColor.greyText,
+                                ),
+                              ],
                             ),
-                            keyboardType: TextInputType.emailAddress,
-                            hint: 'Enter your email',
-                            validator: (value) {
-                              if (value!.isEmpty) {
-                                return 'Email must not be empty';
-                              }
-                              return null;
-                            },
-                            onSaved: (value) {
-                              _email = value!;
-                            },
-                          ),
-                          Obx(() => VFormInput(
+                            VFormInput(
+                              prefixIcon: HugeIcon(
+                                icon: HugeIcons.strokeRoundedMail01,
+                                color: VColor.primary,
+                              ),
+                              keyboardType: .emailAddress,
+                              hint: 'Enter your email',
+                              validator: (value) {
+                                if (value!.isEmpty) {
+                                  return 'Email must not be empty';
+                                }
+                                return null;
+                              },
+                              onSaved: (value) {
+                                _email = value!;
+                              },
+                            ),
+                            Obx(
+                              () => VFormInput(
                                 prefixIcon: HugeIcon(
                                   icon: HugeIcons.strokeRoundedSquareLock02,
                                   color: VColor.primary,
                                 ),
                                 obscure: controller.obscureText.value,
-                                keyboardType: TextInputType.emailAddress,
+                                keyboardType: .emailAddress,
                                 hint: 'Enter your password',
                                 validator: (value) {
                                   if (value!.isEmpty) {
@@ -114,53 +112,55 @@ class _LoginPage extends State<LoginPage> {
                                     color: VColor.primary,
                                   ),
                                 ),
-                              )),
-                          Align(
-                            alignment: Alignment.centerRight,
-                            child: InkWell(
-                              onTap: () =>
-                                  Get.toNamed(RouteName.forgotPassword),
-                              child: VText(
-                                'Forgot password?',
-                                color: VColor.primary,
                               ),
                             ),
-                          ),
-                          PrimaryButton(
-                            'Sign In',
-                            onTap: () async {
-                              final FormState form = _formKey.currentState!;
-                              if (!form.validate()) return;
-                              form.save();
-                              controller.submitLogin(_email, _password);
-                            },
-                          ),
-                          Row(
-                            spacing: 4.0,
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              VText(
-                                'Don\'t have an account?',
-                                color: VColor.greyText,
-                              ),
-                              InkWell(
-                                onTap: () => Get.toNamed(RouteName.register),
+                            Align(
+                              alignment: .centerRight,
+                              child: InkWell(
+                                onTap: () =>
+                                    Get.toNamed(RouteName.forgotPassword),
                                 child: VText(
-                                  'Sign Up',
+                                  'Forgot password?',
                                   color: VColor.primary,
-                                  fontWeight: FontWeight.bold,
                                 ),
                               ),
-                            ],
-                          )
-                        ],
+                            ),
+                            PrimaryButton(
+                              'Sign In',
+                              onTap: () async {
+                                final FormState form = _formKey.currentState!;
+                                if (!form.validate()) return;
+                                form.save();
+                                controller.submitLogin(_email, _password);
+                              },
+                            ),
+                            Row(
+                              spacing: 4.0,
+                              mainAxisAlignment: .center,
+                              children: [
+                                VText(
+                                  'Don\'t have an account?',
+                                  color: VColor.greyText,
+                                ),
+                                InkWell(
+                                  onTap: () => Get.toNamed(RouteName.register),
+                                  child: VText(
+                                    'Sign Up',
+                                    color: VColor.primary,
+                                    fontWeight: .bold,
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ],
+                        ),
                       ),
                     ),
                   ),
                 ),
-              ),
-            );
-          }),
+              );
+            },
+          ),
         ),
       ),
     );

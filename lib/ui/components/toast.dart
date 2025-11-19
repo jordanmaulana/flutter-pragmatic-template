@@ -6,12 +6,9 @@ import 'texts.dart';
 abstract class VToast {
   static void success(String message) {
     toastification.show(
-      title: VText(
-        message,
-        color: VColor.white,
-      ),
-      type: ToastificationType.success,
-      style: ToastificationStyle.fillColored,
+      title: VText(message, color: VColor.white),
+      type: .success,
+      style: .fillColored,
       autoCloseDuration: const Duration(seconds: 3),
       showProgressBar: true,
     );
@@ -19,12 +16,9 @@ abstract class VToast {
 
   static void error(String message) {
     toastification.show(
-      title: VText(
-        message,
-        color: VColor.white,
-      ),
-      type: ToastificationType.error,
-      style: ToastificationStyle.fillColored,
+      title: VText(message, color: VColor.white),
+      type: .error,
+      style: .fillColored,
       autoCloseDuration: const Duration(seconds: 3),
       showProgressBar: true,
     );

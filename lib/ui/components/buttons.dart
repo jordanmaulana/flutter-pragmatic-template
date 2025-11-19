@@ -14,18 +14,14 @@ class PrimaryButton extends StatelessWidget {
     return InkWell(
       onTap: onTap,
       child: Container(
-        width: double.infinity,
+        width: .infinity,
         height: 44.0,
-        alignment: Alignment.center,
+        alignment: .center,
         decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(8.0),
+          borderRadius: .circular(8.0),
           color: VColor.primary,
         ),
-        child: VText(
-          title,
-          color: VColor.white,
-          fontWeight: FontWeight.w600,
-        ),
+        child: VText(title, color: VColor.white, fontWeight: .w600),
       ),
     );
   }
@@ -43,31 +39,25 @@ class SecondaryButton extends StatelessWidget {
     return InkWell(
       onTap: onTap,
       child: Container(
-        width: double.infinity,
+        width: .infinity,
         height: 44.0,
-        alignment: Alignment.center,
+        alignment: .center,
         decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(8.0),
+          borderRadius: .circular(8.0),
           gradient: const LinearGradient(
-            colors: [
-              VColor.primary,
-              VColor.accent,
-            ],
+            colors: [VColor.primary, VColor.accent],
           ),
         ),
-        padding: const EdgeInsets.all(1.0),
+        padding: const .all(1.0),
         child: Container(
-          width: double.infinity,
-          height: double.infinity,
+          width: .infinity,
+          height: .infinity,
           decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(8.0),
+            borderRadius: .circular(8.0),
             color: VColor.white,
           ),
-          alignment: Alignment.center,
-          child: VText(
-            title,
-            color: VColor.primary,
-          ),
+          alignment: .center,
+          child: VText(title, color: VColor.primary),
         ),
       ),
     );

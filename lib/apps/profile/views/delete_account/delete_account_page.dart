@@ -8,10 +8,10 @@ class DeleteAccountPage extends StatelessWidget {
   Widget build(BuildContext context) {
     DeleteAccountController controller = Get.put(DeleteAccountController());
     return Padding(
-      padding: EdgeInsets.all(context.mdPadding),
+      padding: .all(context.mdPadding),
       child: Column(
         spacing: context.mdPadding,
-        mainAxisSize: MainAxisSize.min,
+        mainAxisSize: .min,
         children: [
           Row(
             spacing: context.smPadding,
@@ -20,22 +20,19 @@ class DeleteAccountPage extends StatelessWidget {
                 icon: HugeIcons.strokeRoundedAlert01,
                 color: VColor.error,
               ),
-              VText(
-                'Delete Account',
-                fontSize: 16.0,
-                fontWeight: FontWeight.bold,
-              ),
+              VText('Delete Account', fontSize: 16.0, fontWeight: .bold),
             ],
           ),
           VText(
-              'This action cannot be undone. Once you delete your account, all of your data will be permanently removed.'),
+            'This action cannot be undone. Once you delete your account, all of your data will be permanently removed.',
+          ),
           Container(
             width: double.infinity,
-            padding: EdgeInsets.all(context.mdPadding),
+            padding: .all(context.mdPadding),
             decoration: BoxDecoration(
               color: VColor.errorAccent,
-              borderRadius: BorderRadius.circular(8.0),
-              border: Border.all(color: VColor.error),
+              borderRadius: .circular(8.0),
+              border: .all(color: VColor.error),
             ),
             child: Column(
               spacing: context.mdPadding,
@@ -62,7 +59,7 @@ class DeleteAccountPage extends StatelessWidget {
                 VFormInput(
                   hint: 'Type DELETE here',
                   fillColor: VColor.white,
-                  textCapitalization: TextCapitalization.characters,
+                  textCapitalization: .characters,
                   onChanged: controller.onChange,
                 ),
               ],
@@ -72,10 +69,7 @@ class DeleteAccountPage extends StatelessWidget {
             spacing: context.mdPadding,
             children: [
               Expanded(
-                child: SecondaryButton(
-                  'Cancel',
-                  onTap: () => Get.back(),
-                ),
+                child: SecondaryButton('Cancel', onTap: () => Get.back()),
               ),
               Expanded(
                 child: InkWell(
@@ -86,17 +80,17 @@ class DeleteAccountPage extends StatelessWidget {
                     () => Opacity(
                       opacity: controller.isInputValid.isTrue ? 1.0 : 0.5,
                       child: Container(
-                        width: double.infinity,
+                        width: .infinity,
                         height: 44.0,
-                        alignment: Alignment.center,
+                        alignment: .center,
                         decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(8.0),
+                          borderRadius: .circular(8.0),
                           color: VColor.error,
                         ),
                         child: VText(
                           'Delete Account',
                           color: VColor.white,
-                          fontWeight: FontWeight.w600,
+                          fontWeight: .w600,
                         ),
                       ),
                     ),
