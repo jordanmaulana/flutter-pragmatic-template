@@ -1,5 +1,6 @@
 import 'dart:convert';
 
+import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 
 extension MyStringExtension on String? {
@@ -28,5 +29,27 @@ extension MyMapExtension on dynamic {
       Get.log(e.toString());
       return '';
     }
+  }
+}
+
+class ThousandsSeparatorInputFormatter extends TextInputFormatter {
+  final String symbol;
+
+  ThousandsSeparatorInputFormatter({this.symbol = ','});
+
+  @override
+  TextEditingValue formatEditUpdate(
+    TextEditingValue oldValue,
+    TextEditingValue newValue,
+  ) {
+    final digitsOnly = newValue.text.replaceAll(RegExp(r'[^0-9]'), '');
+    final formatted = digitsOnly.replaceAllMapped(
+      RegExp(r'(\d{1,3})(?=(\d{3})+(?!\d))'),
+      (Match m) => '${m.group(1)}$symbol',
+    );
+    return TextEditingValue(
+      text: formatted,
+      selection: TextSelection.collapsed(offset: formatted.length),
+    );
   }
 }
