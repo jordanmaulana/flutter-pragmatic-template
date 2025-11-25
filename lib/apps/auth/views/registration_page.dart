@@ -67,9 +67,12 @@ class RegistrationPage extends StatelessWidget {
                               ),
                             ),
                             VFormInput(
-                              prefixIcon: HugeIcon(
-                                icon: HugeIcons.strokeRoundedUser,
-                                color: VColor.primary,
+                              prefixIcon: Padding(
+                                padding: const .all(12.0),
+                                child: HugeIcon(
+                                  icon: HugeIcons.strokeRoundedUser,
+                                  color: VColor.primary,
+                                ),
                               ),
                               keyboardType: .name,
                               hint: 'Enter your full name',
@@ -84,9 +87,12 @@ class RegistrationPage extends StatelessWidget {
                               },
                             ),
                             VFormInput(
-                              prefixIcon: HugeIcon(
-                                icon: HugeIcons.strokeRoundedMail01,
-                                color: VColor.primary,
+                              prefixIcon: Padding(
+                                padding: const .all(12.0),
+                                child: HugeIcon(
+                                  icon: HugeIcons.strokeRoundedMail01,
+                                  color: VColor.primary,
+                                ),
                               ),
                               keyboardType: .emailAddress,
                               hint: 'Enter your email',
@@ -102,9 +108,12 @@ class RegistrationPage extends StatelessWidget {
                             ),
                             Obx(
                               () => VFormInput(
-                                prefixIcon: HugeIcon(
-                                  icon: HugeIcons.strokeRoundedSquareLock02,
-                                  color: VColor.primary,
+                                prefixIcon: Padding(
+                                  padding: const .all(12.0),
+                                  child: HugeIcon(
+                                    icon: HugeIcons.strokeRoundedSquareLock02,
+                                    color: VColor.primary,
+                                  ),
                                 ),
                                 obscure: controller.obscurePassword.value,
                                 keyboardType: .visiblePassword,
@@ -120,20 +129,26 @@ class RegistrationPage extends StatelessWidget {
                                 },
                                 suffixIcon: IconButton(
                                   onPressed: controller.toggleObscurePassword,
-                                  icon: HugeIcon(
-                                    icon: controller.obscurePassword.isTrue
-                                        ? HugeIcons.strokeRoundedView
-                                        : HugeIcons.strokeRoundedViewOff,
-                                    color: VColor.primary,
+                                  icon: Padding(
+                                    padding: const .all(12.0),
+                                    child: HugeIcon(
+                                      icon: controller.obscurePassword.isTrue
+                                          ? HugeIcons.strokeRoundedView
+                                          : HugeIcons.strokeRoundedViewOff,
+                                      color: VColor.primary,
+                                    ),
                                   ),
                                 ),
                               ),
                             ),
                             Obx(
                               () => VFormInput(
-                                prefixIcon: HugeIcon(
-                                  icon: HugeIcons.strokeRoundedSquareLock02,
-                                  color: VColor.primary,
+                                prefixIcon: Padding(
+                                  padding: const .all(12.0),
+                                  child: HugeIcon(
+                                    icon: HugeIcons.strokeRoundedSquareLock02,
+                                    color: VColor.primary,
+                                  ),
                                 ),
                                 obscure: controller
                                     .obscurePasswordConfirmation
@@ -152,14 +167,17 @@ class RegistrationPage extends StatelessWidget {
                                 suffixIcon: IconButton(
                                   onPressed: controller
                                       .toggleObscurePasswordConfirmation,
-                                  icon: HugeIcon(
-                                    icon:
-                                        controller
-                                            .obscurePasswordConfirmation
-                                            .isTrue
-                                        ? HugeIcons.strokeRoundedView
-                                        : HugeIcons.strokeRoundedViewOff,
-                                    color: VColor.primary,
+                                  icon: Padding(
+                                    padding: const .all(12.0),
+                                    child: HugeIcon(
+                                      icon:
+                                          controller
+                                              .obscurePasswordConfirmation
+                                              .isTrue
+                                          ? HugeIcons.strokeRoundedView
+                                          : HugeIcons.strokeRoundedViewOff,
+                                      color: VColor.primary,
+                                    ),
                                   ),
                                 ),
                               ),

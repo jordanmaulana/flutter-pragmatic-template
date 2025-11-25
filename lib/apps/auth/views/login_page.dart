@@ -76,10 +76,7 @@ class _LoginPage extends State<LoginPage> {
                                   color: VColor.primary,
                                 ),
                               ),
-                              keyboardType: .number,
-                              inputFormatters: [
-                                ThousandsSeparatorInputFormatter(),
-                              ],
+                              keyboardType: .emailAddress,
                               hint: 'Enter your email',
                               validator: (value) {
                                 if (value!.isEmpty) {
@@ -93,9 +90,12 @@ class _LoginPage extends State<LoginPage> {
                             ),
                             Obx(
                               () => VFormInput(
-                                prefixIcon: HugeIcon(
-                                  icon: HugeIcons.strokeRoundedSquareLock02,
-                                  color: VColor.primary,
+                                prefixIcon: Padding(
+                                  padding: const .all(12.0),
+                                  child: HugeIcon(
+                                    icon: HugeIcons.strokeRoundedSquareLock02,
+                                    color: VColor.primary,
+                                  ),
                                 ),
                                 obscure: controller.obscureText.value,
                                 keyboardType: .emailAddress,
