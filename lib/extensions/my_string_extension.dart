@@ -3,7 +3,7 @@ import 'dart:convert';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 
-extension MyStringExtension on String? {
+extension StringNumberExtension on String? {
   /// Used for number formatting.
   /// Adding comma, every 3 digits.
   String get withNumberSeparator {
@@ -18,7 +18,7 @@ extension MyStringExtension on String? {
   }
 }
 
-extension MyMapExtension on dynamic {
+extension JsonPrettyPrintExtension on dynamic {
   /// Used to print json map to be more readable in logs.
   String get prettyPrint {
     if (this == null) return '';

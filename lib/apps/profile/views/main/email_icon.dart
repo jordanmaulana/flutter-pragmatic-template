@@ -1,7 +1,7 @@
 import 'package:flutter_usecase_template/base/export_view.dart';
 
-class EmailIcon extends StatelessWidget {
-  const EmailIcon({super.key});
+class VEmailIcon extends StatelessWidget {
+  const VEmailIcon({super.key});
 
   @override
   Widget build(BuildContext context) {

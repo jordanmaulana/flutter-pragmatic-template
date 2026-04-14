@@ -1,13 +1,10 @@
+import 'package:flutter_usecase_template/apps/auth/usecases/register_usecase.dart';
+import 'package:flutter_usecase_template/configs/route_name.dart';
+import 'package:flutter_usecase_template/ui/components/popup.dart';
 import 'package:get/get.dart';
 
-// import '../../../components/popup.dart';
-// import '../../../configs/route_name.dart';
-// import '../../profile/controllers/profile_controller.dart';
-// import '../usecases/login_usecase.dart';
-
 class RegisterController extends GetxController {
-  // final ProfileController _profileController = Get.find();
-  // final LoginUsecase _loginUsecase = Get.find();
+  final RegisterUsecase _registerUsecase = Get.find();
 
   RxBool obscurePassword = true.obs;
   void toggleObscurePassword() => obscurePassword(!obscurePassword.value);
@@ -16,18 +13,17 @@ class RegisterController extends GetxController {
   void toggleObscurePasswordConfirmation() =>
       obscurePasswordConfirmation(!obscurePasswordConfirmation.value);
 
-  void submit() async {
-    // VPopup.loading();
-    // final result = await _loginUsecase.invoke(email, password);
-    // VPopup.pop();
-    // result.when(
-    //   onSuccess: (data) async {
-    //     await _profileController.getProfile();
-    //     Get.offAllNamed(RouteName.main);
-    //   },
-    //   onFailure: (message) {
-    //     VPopup.error(message);
-    //   },
-    // );
+  void submit(Map<String, String> data) async {
+    VPopup.loading();
+    final result = await _registerUsecase.invoke(data);
+    VPopup.pop();
+    result.when(
+      onSuccess: (profile) {
+        Get.offAllNamed(RouteName.main);
+      },
+      onFailure: (message) {
+        VPopup.error(message);
+      },
+    );
   }
 }

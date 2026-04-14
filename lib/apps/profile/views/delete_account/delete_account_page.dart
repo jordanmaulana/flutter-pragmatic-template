@@ -6,7 +6,7 @@ class DeleteAccountPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    DeleteAccountController controller = Get.put(DeleteAccountController());
+    DeleteAccountController controller = Get.find();
     return Padding(
       padding: .all(context.mdPadding),
       child: Column(
@@ -69,7 +69,7 @@ class DeleteAccountPage extends StatelessWidget {
             spacing: context.mdPadding,
             children: [
               Expanded(
-                child: SecondaryButton('Cancel', onTap: () => Get.back()),
+                child: VSecondaryButton('Cancel', onTap: () => Get.back()),
               ),
               Expanded(
                 child: InkWell(

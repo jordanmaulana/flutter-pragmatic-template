@@ -12,8 +12,8 @@ class ProfileRepo {
   /// Constructor is required to enable unit testing.
   /// This way, we can mock the [DioClient] & [GetStorage] functions.
   ProfileRepo({required DioClient dioClient, required GetStorage box})
-      : _box = box,
-        _dioClient = dioClient;
+    : _box = box,
+      _dioClient = dioClient;
 
   Future<Resource<Profile, String>> getProfile() async {
     try {
@@ -33,7 +33,8 @@ class ProfileRepo {
   }
 
   Future<Resource<bool, String>> changePassword(
-      Map<String, String> data) async {
+    Map<String, String> data,
+  ) async {
     try {
       await _dioClient.post('/api/change_password', data: data);
       return true.toResourceSuccess();

@@ -2,7 +2,7 @@ import 'package:flutter_usecase_template/apps/profile/repo/profile_repo.dart';
 import 'package:flutter_usecase_template/ui/components/toast.dart';
 import 'package:get/get.dart';
 
-class ChangePasswordController {
+class ChangePasswordController extends GetxController {
   final ProfileRepo _profileRepo = Get.find<ProfileRepo>();
 
   RxBool obscurePassword = true.obs;

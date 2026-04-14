@@ -22,8 +22,9 @@ void main() {
     /// the test will return fail
     test('No bearer token', () async {
       /// Mocking getstorage to return false when has data is called.
-      when(mockGetStorage.hasData(Constants.token))
-          .thenAnswer((realInvocation) {
+      when(mockGetStorage.hasData(Constants.token)).thenAnswer((
+        realInvocation,
+      ) {
         return false;
       });
 

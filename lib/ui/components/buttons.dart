@@ -4,10 +4,10 @@ import '../../base/export_view.dart';
 
 /// Main button of the app.
 /// Has fill color and white text.
-class PrimaryButton extends StatelessWidget {
+class VPrimaryButton extends StatelessWidget {
   final String title;
   final Function() onTap;
-  const PrimaryButton(this.title, {required this.onTap, super.key});
+  const VPrimaryButton(this.title, {required this.onTap, super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -29,10 +29,10 @@ class PrimaryButton extends StatelessWidget {
 
 /// Secondary button of the app.
 /// Has white fill color, has outline and the text color is the same with outline color.
-class SecondaryButton extends StatelessWidget {
+class VSecondaryButton extends StatelessWidget {
   final String title;
   final Function() onTap;
-  const SecondaryButton(this.title, {required this.onTap, super.key});
+  const VSecondaryButton(this.title, {required this.onTap, super.key});
 
   @override
   Widget build(BuildContext context) {

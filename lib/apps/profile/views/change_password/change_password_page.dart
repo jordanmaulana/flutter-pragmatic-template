@@ -7,7 +7,7 @@ class ChangePasswordPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final formKey = GlobalKey<FormState>();
-    Map<String, dynamic> data = {};
+    Map<String, String> data = {};
 
     ChangePasswordController controller = Get.find();
     return Scaffold(
@@ -39,7 +39,7 @@ class ChangePasswordPage extends StatelessWidget {
                     return null;
                   },
                   onSaved: (String? value) {
-                    data["password"] = value!;
+                    data["current_password"] = value!;
                   },
                   suffixIcon: IconButton(
                     onPressed: controller.toggleObscurePassword,
@@ -71,7 +71,7 @@ class ChangePasswordPage extends StatelessWidget {
                     return null;
                   },
                   onSaved: (String? value) {
-                    data["password"] = value!;
+                    data["new_password"] = value!;
                   },
                   suffixIcon: IconButton(
                     onPressed: controller.toggleObscureNewPassword,
@@ -103,7 +103,7 @@ class ChangePasswordPage extends StatelessWidget {
                     return null;
                   },
                   onSaved: (String? value) {
-                    data["password"] = value!;
+                    data["new_password_confirmation"] = value!;
                   },
                   suffixIcon: IconButton(
                     onPressed: controller.toggleObscurePasswordConfirmation,
@@ -117,7 +117,15 @@ class ChangePasswordPage extends StatelessWidget {
                 ),
               ),
               SizedBox(height: context.lgPadding),
-              PrimaryButton('Update Password', onTap: () {}),
+              VPrimaryButton(
+                'Update Password',
+                onTap: () async {
+                  final FormState form = formKey.currentState!;
+                  if (!form.validate()) return;
+                  form.save();
+                  controller.submit(data);
+                },
+              ),
             ],
           ),
         ),

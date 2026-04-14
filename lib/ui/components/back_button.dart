@@ -10,10 +10,7 @@ class VBackButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return InkWell(
       onTap: () => Get.back(),
-      child: const Icon(
-        Icons.arrow_back,
-        color: VColor.dark,
-      ),
+      child: const Icon(Icons.arrow_back, color: VColor.dark),
     );
   }
 }

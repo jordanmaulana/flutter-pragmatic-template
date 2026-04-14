@@ -4,16 +4,16 @@ import 'package:package_info_plus/package_info_plus.dart';
 import 'texts.dart';
 
 /// Shows version text to indicate app version written in pubspec.yaml
-class VersionText extends StatefulWidget {
+class VVersionText extends StatefulWidget {
   final bool onlyVersion;
 
-  const VersionText({this.onlyVersion = false, super.key});
+  const VVersionText({this.onlyVersion = false, super.key});
 
   @override
-  VersionTextState createState() => VersionTextState();
+  State<VVersionText> createState() => _VVersionTextState();
 }
 
-class VersionTextState extends State<VersionText> {
+class _VVersionTextState extends State<VVersionText> {
   PackageInfo? info;
 
   @override

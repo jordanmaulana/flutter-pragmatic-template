@@ -5,11 +5,11 @@ import 'texts.dart';
 
 /// Used for custom appbar.
 /// E.g: appbar that has transparent background of some gradient color.
-class StandardAppbar extends StatelessWidget implements PreferredSizeWidget {
+class VAppBar extends StatelessWidget implements PreferredSizeWidget {
   final List<Widget>? actions;
   final bool includeBackButton;
   final String? title;
-  const StandardAppbar({
+  const VAppBar({
     super.key,
     this.actions,
     this.includeBackButton = true,

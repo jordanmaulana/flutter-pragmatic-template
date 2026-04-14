@@ -19,14 +19,12 @@ class VError extends StatelessWidget {
   }
 }
 
-/// Standardized empty data placeholder widget.
-class NoData extends StatelessWidget {
+class VNoData extends StatelessWidget {
   final String? text;
-
-  const NoData({super.key, this.text});
+  const VNoData({super.key, this.text});
 
   @override
   Widget build(BuildContext context) {
-    return VText(text ?? 'Tidak ada data', align: .center);
+    return VText(text ?? 'No data', align: .center);
   }
 }

@@ -41,7 +41,7 @@ class VPopup {
               const Divider(thickness: 0.5, height: 1),
               Padding(
                 padding: const .all(8.0),
-                child: PrimaryButton(
+                child: VPrimaryButton(
                   'OK',
                   onTap: () {
                     Get.back();
@@ -79,7 +79,7 @@ class VPopup {
                   const SizedBox(height: 16.0),
                   VText(message, fontSize: 16.0),
                   const Divider(thickness: 1.0, height: 40.0),
-                  PrimaryButton('OK', onTap: callback),
+                  VPrimaryButton('OK', onTap: callback),
                 ],
               ),
             ),

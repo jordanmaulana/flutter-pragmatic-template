@@ -15,9 +15,9 @@ class LoginUsecase {
     required ProfileRepo profileRepo,
     required GetStorage box,
     required AuthRepo authRepo,
-  })  : _profileRepo = profileRepo,
-        _box = box,
-        _authRepo = authRepo;
+  }) : _profileRepo = profileRepo,
+       _box = box,
+       _authRepo = authRepo;
 
   Future<Resource<Profile, String>> invoke(
     String email,

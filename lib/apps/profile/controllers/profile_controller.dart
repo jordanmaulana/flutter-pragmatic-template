@@ -9,28 +9,25 @@ import '../models/profile.dart';
 class ProfileController extends GetxController {
   final ProfileRepo _profileRepo = Get.find();
   final GetStorage _box = Get.find();
-  Profile? profile;
+  Rx<Profile?> profile = Rx<Profile?>(null);
 
   Future<void> getProfile() async {
     if (_box.hasData(Constants.savedProfile)) {
-      profile = Profile.fromJson(_box.read(Constants.savedProfile));
-      update();
+      profile.value = Profile.fromJson(_box.read(Constants.savedProfile));
     }
 
     final result = await _profileRepo.getProfile();
     result.when(
       onSuccess: (data) {
-        profile = data;
-        update();
+        profile.value = data;
       },
       onFailure: (message) {},
     );
   }
 
   void logout() {
-    profile = null;
+    profile.value = null;
     _box.erase();
-    update();
     Get.offAllNamed(RouteName.main);
   }
 

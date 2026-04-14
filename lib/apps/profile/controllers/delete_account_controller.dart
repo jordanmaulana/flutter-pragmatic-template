@@ -1,9 +1,10 @@
-import 'package:flutter_usecase_template/base/export_view.dart';
+import 'package:flutter_usecase_template/apps/profile/repo/profile_repo.dart';
+import 'package:flutter_usecase_template/configs/route_name.dart';
+import 'package:get/get.dart';
 
 import '../../../ui/components/toast.dart';
-import '../repo/profile_repo.dart';
 
-class DeleteAccountController {
+class DeleteAccountController extends GetxController {
   final ProfileRepo _profileRepo = Get.find<ProfileRepo>();
 
   RxBool isLoading = false.obs;
@@ -21,7 +22,7 @@ class DeleteAccountController {
     final result = await _profileRepo.deleteAccount();
     result.when(
       onSuccess: (data) {
-        Get.offAllNamed('/login');
+        Get.offAllNamed(RouteName.main);
         VToast.success('Account deleted successfully!');
       },
       onFailure: (error) {

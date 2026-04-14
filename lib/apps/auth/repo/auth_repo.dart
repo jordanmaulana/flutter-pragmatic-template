@@ -10,10 +10,7 @@ class AuthRepo {
     try {
       final response = await _dioClient.post(
         '/api/login',
-        data: {
-          'email': email,
-          'password': password,
-        },
+        data: {'email': email, 'password': password},
       );
 
       return "${response.data['token']}".toResourceSuccess();
@@ -24,10 +21,7 @@ class AuthRepo {
 
   Future<Resource<String, String>> register(Map<String, String> data) async {
     try {
-      final response = await _dioClient.post(
-        '/api/register',
-        data: data,
-      );
+      final response = await _dioClient.post('/api/register', data: data);
 
       return '${response.data['token']}'.toResourceSuccess();
     } on DioException catch (e) {
@@ -37,12 +31,7 @@ class AuthRepo {
 
   Future<Resource<bool, String>> forgotPassword(String email) async {
     try {
-      await _dioClient.post(
-        '/api/forgot',
-        data: {
-          'email': email,
-        },
-      );
+      await _dioClient.post('/api/forgot', data: {'email': email});
 
       return true.toResourceSuccess();
     } on DioException catch (e) {

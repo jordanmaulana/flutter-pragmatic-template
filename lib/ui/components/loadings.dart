@@ -16,9 +16,9 @@ class VLoading extends StatelessWidget {
 
 /// Standardized loading widget for next page loading.
 /// Next page loading is shown when list widget scrolled to the bottom of the list.
-class NextPageLoading extends StatelessWidget {
+class VNextPageLoading extends StatelessWidget {
   final double? progress;
-  const NextPageLoading({this.progress, super.key});
+  const VNextPageLoading({this.progress, super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -26,10 +26,7 @@ class NextPageLoading extends StatelessWidget {
       bottom: 16.0,
       left: 0.0,
       right: 0.0,
-      child: LinearProgressIndicator(
-        color: VColor.primary,
-        value: progress,
-      ),
+      child: LinearProgressIndicator(color: VColor.primary, value: progress),
     );
   }
 }

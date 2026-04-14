@@ -2,7 +2,7 @@ import 'package:flutter_usecase_template/apps/auth/repo/auth_repo.dart';
 import 'package:flutter_usecase_template/ui/components/toast.dart';
 import 'package:get/get.dart';
 
-class ForgotPasswordController {
+class ForgotPasswordController extends GetxController {
   final AuthRepo _authRepo = Get.find();
 
   void submit(String email) async {

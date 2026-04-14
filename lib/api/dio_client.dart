@@ -16,13 +16,14 @@ class DioClient extends DioForNative {
   final GetStorage _box;
 
   DioClient(this._box, {BaseOptions? options, bool useToken = true})
-      : super(options) {
+    : super(options) {
     interceptors.add(
       InterceptorsWrapper(
         onError: (DioException e, ErrorInterceptorHandler handler) {
           /// Better to add function to error report an API. E.g: Sentry, Firebase Analytic
           Get.log(
-              'API error ${e.requestOptions.method} ${e.response?.realUri} ${e.response?.statusCode} \n$e');
+            'API error ${e.requestOptions.method} ${e.response?.realUri} ${e.response?.statusCode} \n$e',
+          );
           return handler.next(e);
         },
         onRequest: (RequestOptions options, RequestInterceptorHandler handler) {
@@ -37,9 +38,11 @@ class DioClient extends DioForNative {
         },
         onResponse: (Response response, ResponseInterceptorHandler handler) {
           /// Log anything necessary to easily debug
-          Get.log('API Response ${response.realUri} ${response.statusCode}: '
-              '${response.statusMessage}\n'
-              '${response.requestOptions.uri.queryParameters.prettyPrint}\n');
+          Get.log(
+            'API Response ${response.realUri} ${response.statusCode}: '
+            '${response.statusMessage}\n'
+            '${response.requestOptions.uri.queryParameters.prettyPrint}\n',
+          );
 
           Get.log((response.data as Map<String, dynamic>).prettyPrint);
 

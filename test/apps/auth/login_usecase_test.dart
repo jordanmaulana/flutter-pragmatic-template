@@ -25,15 +25,9 @@ void main() {
 
     test('Login failed', () async {
       /// Mock login API to return error user not found.
-      when(
-        authRepo.login('tes', 'tes'),
-      ).thenAnswer(
-        (realInvocation) {
-          return Future.value(
-            'User not found'.toResourceFailure(),
-          );
-        },
-      );
+      when(authRepo.login('tes', 'tes')).thenAnswer((realInvocation) {
+        return Future.value('User not found'.toResourceFailure());
+      });
 
       /// Execute the login flow
       final result = await loginUsecase.invoke('tes', 'tes');
@@ -47,19 +41,14 @@ void main() {
 
     test('Login success get profile failed', () async {
       /// Mock login API to return success with token.
-      when(
-        authRepo.login('tes', 'tes'),
-      ).thenAnswer(
-        (realInvocation) {
-          return Future.value(
-            'token'.toResourceSuccess(),
-          );
-        },
-      );
+      when(authRepo.login('tes', 'tes')).thenAnswer((realInvocation) {
+        return Future.value('token'.toResourceSuccess());
+      });
 
       /// Mock get profile repo to return error with the specified message.
       when(profileRepo.getProfile()).thenAnswer(
-          (realInvocation) => Future.value('Server error'.toResourceFailure()));
+        (realInvocation) => Future.value('Server error'.toResourceFailure()),
+      );
 
       /// Execute login flow.
       final result = await loginUsecase.invoke('tes', 'tes');
@@ -79,19 +68,14 @@ void main() {
 
     test('Login success', () async {
       /// Mock login API to return success with token.
-      when(
-        authRepo.login('tes', 'tes'),
-      ).thenAnswer(
-        (realInvocation) {
-          return Future.value(
-            'token'.toResourceSuccess(),
-          );
-        },
-      );
+      when(authRepo.login('tes', 'tes')).thenAnswer((realInvocation) {
+        return Future.value('token'.toResourceSuccess());
+      });
 
       /// Mock profile repo to return a profile with id 1.
       when(profileRepo.getProfile()).thenAnswer(
-          (realInvocation) => Future.value(Profile(id: 1).toResourceSuccess()));
+        (realInvocation) => Future.value(Profile(id: 1).toResourceSuccess()),
+      );
 
       /// Execute login flow
       final result = await loginUsecase.invoke('tes', 'tes');

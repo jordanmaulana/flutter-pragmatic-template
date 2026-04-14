@@ -17,7 +17,7 @@ class _LoginPage extends State<LoginPage> {
 
   @override
   Widget build(BuildContext context) {
-    LoginController controller = Get.put(LoginController());
+    LoginController controller = Get.find();
 
     return Scaffold(
       body: Container(
@@ -131,7 +131,7 @@ class _LoginPage extends State<LoginPage> {
                                 ),
                               ),
                             ),
-                            PrimaryButton(
+                            VPrimaryButton(
                               'Sign In',
                               onTap: () async {
                                 final FormState form = _formKey.currentState!;

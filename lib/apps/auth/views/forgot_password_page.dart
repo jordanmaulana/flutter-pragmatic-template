@@ -9,7 +9,7 @@ class ForgotPasswordPage extends StatelessWidget {
   Widget build(BuildContext context) {
     ForgotPasswordController controller = Get.find();
     final formKey = GlobalKey<FormState>();
-    Map<String, dynamic> data = {};
+    Map<String, String> data = {};
 
     return Scaffold(
       body: Container(
@@ -94,13 +94,13 @@ class ForgotPasswordPage extends StatelessWidget {
                                 data["email"] = value!;
                               },
                             ),
-                            PrimaryButton(
+                            VPrimaryButton(
                               'Reset Password',
                               onTap: () async {
                                 final FormState form = formKey.currentState!;
                                 if (!form.validate()) return;
                                 form.save();
-                                controller.submit(data["email"]);
+                                controller.submit(data["email"]!);
                               },
                             ),
                           ],

@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_usecase_template/apps/auth/controllers/forgot_password_controller.dart';
+import 'package:flutter_usecase_template/apps/auth/controllers/login_controller.dart';
 import 'package:flutter_usecase_template/apps/auth/controllers/register_controller.dart';
 import 'package:flutter_usecase_template/apps/auth/views/forgot_password_page.dart';
 import 'package:flutter_usecase_template/apps/auth/views/login_page.dart';
 import 'package:flutter_usecase_template/apps/auth/views/registration_page.dart';
+import 'package:flutter_usecase_template/apps/main_nav/controllers/main_nav_controller.dart';
 import 'package:flutter_usecase_template/apps/main_nav/views/main_nav_page.dart';
 import 'package:flutter_usecase_template/apps/profile/controllers/change_password_controller.dart';
 import 'package:flutter_usecase_template/apps/profile/controllers/profile_controller.dart';
@@ -39,13 +41,16 @@ class MyApp extends StatelessWidget {
           GetPage(
             name: RouteName.main,
             page: () {
-              return GetBuilder(
-                builder: (ProfileController controller) {
-                  if (controller.profile == null) return const LoginPage();
-                  return const MainNavPage();
-                },
-              );
+              final controller = Get.find<ProfileController>();
+              return Obx(() {
+                if (controller.profile.value == null) return const LoginPage();
+                return const MainNavPage();
+              });
             },
+            binding: BindingsBuilder(() {
+              Get.lazyPut(() => LoginController());
+              Get.lazyPut(() => MainNavController());
+            }),
           ),
 
           /// Add more pages here

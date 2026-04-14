@@ -1,10 +1,9 @@
+import 'package:flutter_usecase_template/apps/profile/controllers/profile_controller.dart';
 import 'package:flutter_usecase_template/apps/profile/views/delete_account/delete_account_page.dart';
 import 'package:flutter_usecase_template/apps/profile/views/main/email_icon.dart';
-import 'package:flutter_usecase_template/configs/route_name.dart';
 
 import '../../../../base/export_view.dart';
-
-import '../../controllers/profile_controller.dart';
+import '../../../../configs/route_name.dart';
 
 class ProfilePage extends StatelessWidget {
   const ProfilePage({super.key});
@@ -46,7 +45,7 @@ class ProfilePage extends StatelessWidget {
                         Row(
                           spacing: context.smPadding,
                           children: [
-                            EmailIcon(),
+                            VEmailIcon(),
                             Column(
                               crossAxisAlignment: .start,
                               children: [

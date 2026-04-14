@@ -46,7 +46,7 @@ class VList extends StatelessWidget {
   Widget build(BuildContext context) {
     if (loading) return const VLoading();
     if (errorMsg.isNotEmpty) return VError(errorMsg);
-    if (length == 0) return Center(child: emptyPlaceHolder ?? const NoData());
+    if (length == 0) return Center(child: emptyPlaceHolder ?? const VNoData());
     return RefreshIndicator(
       onRefresh: onRefresh,
       child: ListView.separated(
@@ -119,7 +119,7 @@ class VPaginatedList extends StatelessWidget {
       return Center(
         child: Padding(
           padding: const .all(32.0),
-          child: emptyPlaceHolder ?? const NoData(),
+          child: emptyPlaceHolder ?? const VNoData(),
         ),
       );
     }
@@ -150,7 +150,7 @@ class VPaginatedList extends StatelessWidget {
             return true;
           },
         ),
-        if (loading && page > 1) const NextPageLoading(),
+        if (loading && page > 1) const VNextPageLoading(),
       ],
     );
   }

@@ -8,7 +8,7 @@ class MainNavPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    MainNavController controller = Get.put(MainNavController());
+    MainNavController controller = Get.find();
 
     return Obx(() {
       return Scaffold(

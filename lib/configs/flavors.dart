@@ -13,9 +13,7 @@ import 'constants.dart';
 class BuildFlavor {
   late String apiUrl;
 
-  BuildFlavor({
-    required this.apiUrl,
-  });
+  BuildFlavor({required this.apiUrl});
 
   factory BuildFlavor.initiate({required BuildFlavorType buildFlavorType}) {
     switch (buildFlavorType) {

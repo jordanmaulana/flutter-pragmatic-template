@@ -162,7 +162,7 @@ class RegistrationPage extends StatelessWidget {
                                   return null;
                                 },
                                 onSaved: (String? value) {
-                                  data["password"] = value!;
+                                  data["password_confirmation"] = value!;
                                 },
                                 suffixIcon: IconButton(
                                   onPressed: controller
@@ -231,13 +231,13 @@ class RegistrationPage extends StatelessWidget {
                                 ),
                               ],
                             ),
-                            PrimaryButton(
+                            VPrimaryButton(
                               'Create Account',
                               onTap: () async {
                                 final FormState form = formKey.currentState!;
                                 if (!form.validate()) return;
                                 form.save();
-                                controller.submit();
+                                controller.submit(data);
                               },
                             ),
                             SizedBox(height: context.smPadding),

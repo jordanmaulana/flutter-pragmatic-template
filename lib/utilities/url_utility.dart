@@ -6,7 +6,8 @@ class UrlUtility {
   static String? getYoutubeThumbnail(String videoUrl) {
     // Pattern covering both regular and embed YouTube URLs
     RegExp pattern = RegExp(
-        r'(?:youtube(?:-nocookie)?\.com\/(?:[^\/\n\s]+\/\S+\/|(?:v|e(?:mbed)?)\/|\S*?[?&]v=)|youtu\.be\/)([a-zA-Z0-9_-]{11})');
+      r'(?:youtube(?:-nocookie)?\.com\/(?:[^\/\n\s]+\/\S+\/|(?:v|e(?:mbed)?)\/|\S*?[?&]v=)|youtu\.be\/)([a-zA-Z0-9_-]{11})',
+    );
 
     // Match the pattern against the URL
     Match? match = pattern.firstMatch(videoUrl);
